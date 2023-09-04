@@ -1,0 +1,17 @@
+/*!
+ * uni-calendar-widget v0.0.7
+ * author: fex
+ * build tool: AKFun
+ * build time: Mon Sep 04 2023 14:29:41 GMT+0800 (中国标准时间)
+ * build tool info: https://github.com/wibetter/akfun
+ */
+
+/*! vue3-aipage-widget/dist/index.umd */
+
+/*!****************************************************!*\
+  !*** external "vue3-aipage-widget/dist/index.umd" ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ./src/h5components/uni-cus-calendar/plugin.ts ***!
+  \*****************************************************/
