@@ -43,28 +43,10 @@ module.exports = {
     moduleRules: [], // 用于配置自定义loaders
     plugins: [], // 用于配置自定义plugins // uni()
   },
-  preview: {
-    entry: {
-      // 本地预览自定义组件内容
-      index: './src/h5components/preview.js',
-    },
-    // 用于开启本地调试模式的相关配置信息
-    NODE_ENV: 'development',
-    port: 80,
-    assetsPublicPath: '/', // 设置静态资源的引用路径（根域名+路径）
-    assetsSubDirectory: '',
-    hostname: 'localhost',
-    cssSourceMap: true,
-    closeHotReload: false, // 是否关闭热更新
-    autoOpenBrowser: true,
-  },
   dev: {
     entry: {
       // 本地调试模式的入口
-      index: [
-        './src/h5components/uni-cus-calendar/renderer.ts',
-        './src/h5components/uni-cus-calendar/plugin.ts',
-      ],
+      index: ['./build/linkDebug.js'],
     },
     // 用于开启本地调试模式的相关配置信息
     NODE_ENV: 'development',
@@ -81,10 +63,7 @@ module.exports = {
   linkDebug: {
     entry: {
       // 外链调试（爱速搭中预览本地自定义组件）
-      index: [
-        './src/h5components/uni-cus-calendar/renderer.ts',
-        './src/h5components/uni-cus-calendar/plugin.ts',
-      ],
+      index: './build/linkDebug.js',
     },
     NODE_ENV: 'production',
     port: 80,
@@ -96,23 +75,5 @@ module.exports = {
     cssSourceMap: true,
     closeHotReload: true, // 是否关闭热更新
     debugMode: 'aipage-editor',
-  },
-  // build2lib 用于打包生成环境的js模块
-  build2lib: {
-    entry: {
-      uniCusCalendarRenderer: './src/h5components/uni-cus-calendar/renderer.ts',
-      uniCusCalendarPlugin: './src/h5components/uni-cus-calendar/plugin.ts',
-    },
-    // 用于构建生产环境代码的相关配置信息
-    NODE_ENV: 'development', // development / production
-    libraryName: 'aipageWidget', // 构建第三方功能包时最后导出的引用变量名
-    assetsRoot: resolve('./preview'), // 打包后的文件绝对路径（物理路径）
-    assetsPublicPath: '/', // 设置静态资源的引用路径（根域名+路径）
-    assetsSubDirectory: '', // 资源引用二级路径
-    ignoreNodeModules: true, // 打包时是否忽略 node_modules
-    productionSourceMap: false,
-    productionGzip: false,
-    productionGzipExtensions: ['js', 'css', 'json'],
-    bundleAnalyzerReport: false,
   },
 };
